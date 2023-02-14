@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import After1 from './components/After1';
+import After2 from './components/After2';
+import Before1 from './components/Before1';
+import Before2 from './components/Before2';
+import SiteMap from './components/SiteMap';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SiteMap />} />
+        <Route path="Before1" element={<Before1 />} />
+        <Route path="Before2" element={<Before2 />} />
+        <Route path="After1" element={<After1 />} />
+        <Route path="After2" element={<After2 />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
